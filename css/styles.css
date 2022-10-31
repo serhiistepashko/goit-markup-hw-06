@@ -34,7 +34,6 @@ body {
   font-family: var(--main-font-family);
   color: var(--primary-color);
   margin: 0;
-  /* padding-top: 80px; */
 }
 
 ul {
@@ -437,7 +436,7 @@ background-color: var(--btnhover-color);
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .soc-list-link {
@@ -598,6 +597,15 @@ background-color: var(--btnhover-color);
 
 .soc-icon-footer {
   fill: var(--white-color);
+}
+
+/* поле введення пошти для підписки */
+.sub-email {
+  margin-left: 93px;
+}
+
+.sub-email-heading {
+  color: var(--white-color)
 }
 
 
