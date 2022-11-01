@@ -25,6 +25,7 @@
   --backdrop-backgrnd-color: rgba(0, 0, 0, 0.2);
   --icon-color: #afb1b8;
   --bckgrnd-soc-color: rgba(255, 255, 255, 0.1);
+  --border-input-email-color: rgba(255, 255, 255, 0.3);
   --timing-function-1: cubic-bezier(0.4, 0, 0.2, 1);
   --duration-1: 250ms;
   --bckgrnd-color-before: rgba(33, 150, 243, 0.9);
@@ -97,19 +98,31 @@ h1, h2, h3, h4, h5, h6, p, ul {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: background-color var(--duration-1) var(--timing-function-1);
+  /* transition: background-color var(--duration-1) var(--timing-function-1); */
 }
 
-.modal-btn:hover {
+/* .modal-btn:hover {
   background-color: var(--bluelite-color);
-}
+} */
 
 .cross {
   transition: fill var(--duration-1) var(--timing-function-1);
 }
 
 .modal-btn:hover .cross{
-  fill: var(--white-color);
+  fill: var(--bluelite-color);
+}
+
+.heading-modal {
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.form-label {
+  display: block;
 }
 
 /* стилі у тегів <section> */
@@ -238,8 +251,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 /* елементи списку навігації та списку з email та tel (хедер) */
 .link {
-  /* display: flex;
-  align-items: center; */
   font-size: 14px;
   font-weight: 500;
   line-height: 1.1;
@@ -600,12 +611,76 @@ background-color: var(--btnhover-color);
 }
 
 /* поле введення пошти для підписки */
-.sub-email {
+.subscribe-email {
   margin-left: 93px;
 }
 
 .sub-email-heading {
-  color: var(--white-color)
+  color: var(--white-color);
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: color var(--duration-1) var(--timing-function-1);
+}
+
+.subscribe-form-label {
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: color var(--duration-1) var(--timing-function-1);
+}
+
+.sub-email-heading:hover {
+  color: var(--border-input-email-color);
+}
+
+.subscribe-field-btn {
+  display: flex;
+}
+
+.subscribe-field {
+  width: 358px;
+  height: 50px;
+  background-color: var(--banner-color);
+  border: 1px solid var(--border-input-email-color);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  padding: 15px 16px;
+  margin-right: 12px;
+  color: var(--white-color);
+}
+
+.subscribe-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  background-color: var(--bluelite-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  /* width: 200px; */
+  /* height: 50px; */
+  color: var(--white-color);
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  padding: 0 28px;
+  transition: background-color var(--duration-1) var(--timing-function-1);;
+}
+
+.sub-icon-send {
+  fill: var(--white-color);
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: var(--btnhover-color);
 }
 
 

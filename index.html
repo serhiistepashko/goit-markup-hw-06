@@ -336,13 +336,18 @@
               </li>
             </ul>
           </div>
-          <div class="sub-email">
-            <h3 class="sub-email-heading third-lvl-title">Підпишіться на розсилку</h3>
-            <form name="signup_form" autocomplete="on">
-              <label>
-            
-              </label>
-           
+          <div class="subscribe-email">
+            <form name="subscribe-form">
+              <label class="subscribe-form-label" for="mail">Підпишіться на розсилку</label> 
+              <div class="subscribe-field-btn">
+                <input class="subscribe-field" type="email" name="mail" id="mail" placeholder="E-mail"/>
+                <button class="subscribe-btn" type="submit">
+                  Підписатися         
+                    <svg class="sub-icon-send" width="24px" height="24px">
+                      <use href="./images/icons.svg#icon-icon-send"></use>
+                    </svg>             
+                </button>
+              </div>    
             </form>
           </div>
         </div>
@@ -350,6 +355,17 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
+        <h2 class="heading-modal">Залиште свої дані, ми вам передзвонимо</h2>
+        <form name="contact-form">
+          <label class="form-label" for="person-name">Імʼя</label>
+          <input class="modal-name-field" type="text" name="person-name" id="person-name">
+          <label class="form-label" for="person-tel">Телефон</label>
+          <input class="modal-tel-field" type="tel" name="person-tel" id="person-tel">
+          <label class="form-label" for="person-email">Пошта</label>
+          <input class="modal-email-field" type="email" name="person-email" id="person-email">
+          <label class="form-label" for="person-comments">Коментар</label>
+          <textarea class="modal-comments-field" name="person-comments" id="person-comments"></textarea>
+        </form>
         <button class="modal-btn" type="button" data-modal-close>
           <svg class="cross" width="18px" height="18px">
             <use href="./images/icons.svg#icon-close"></use>
