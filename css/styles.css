@@ -23,6 +23,9 @@
   --timing-function-1: cubic-bezier(0.4, 0, 0.2, 1);
   --duration-1: 250ms;
   --bckgrnd-color-before: rgba(33, 150, 243, 0.9);
+  --modal-border-color: rgba(0, 0, 0, 0.1);
+  --input-border-color: rgba(33, 33, 33, 0.2);
+  --placeholder-color: rgba(117, 117, 117, 0.5);
 }
 
 body {
@@ -35,7 +38,14 @@ ul {
   list-style-type: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -43,21 +53,21 @@ h1, h2, h3, h4, h5, h6, p, ul {
 /* модальне вікно */
 .backdrop {
   background-color: var(--backdrop-backgrnd-color);
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
   opacity: 1;
-  transition: opacity var(--duration-1) var(--timing-function-1), visibility var(--duration-1) var(--timing-function-1); 
+  transition: opacity var(--duration-1) var(--timing-function-1), visibility var(--duration-1) var(--timing-function-1);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-}  
+}
 
 
 .modal {
@@ -70,8 +80,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
   height: 581px;
   background-color: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-  0px 1px 1px rgba(0, 0, 0, 0.14),
-  0px 2px 1px rgba(0, 0, 0, 0.2);
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform var(--duration-1) var(--timing-function-1);
   padding: 40px;
@@ -89,18 +99,18 @@ h1, h2, h3, h4, h5, h6, p, ul {
   height: 30px;
   background-color: var(--white-color);
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--modal-border-color);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
- }
+}
 
 .cross {
   transition: fill var(--duration-1) var(--timing-function-1);
 }
 
-.modal-btn:hover .cross{
+.modal-btn:hover .cross {
   fill: var(--bluelite-color);
 }
 
@@ -111,31 +121,101 @@ h1, h2, h3, h4, h5, h6, p, ul {
   line-height: 1.15;
   letter-spacing: 0.03em;
   text-align: center;
+  margin-bottom: 12px;
 }
 
 .form-label {
   display: block;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--secondary-color);
+  margin-top: 10px;
+  margin-bottom: 4px;
 }
 
 .form-control {
   position: relative;
-  display: flex;
 }
 
 .form-input {
   width: 100%;
   height: 40px;
+  padding: 12px 12px 12px 42px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: 1px solid var(--input-border-color);  
+  outline: none;
 }
 
 .form-input-icon {
-  position: absolute
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
 }
 
-.form-comment {
+.form-control:focus-within .form-input-icon {
+  fill: var(--bluelite-color);
+}
+
+.form-textarea {
   width: 100%;
   height: 120px;
   resize: none;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: 1px solid var(--input-border-color);
+  padding: 11px 15px;
+  outline: none;
+  font-size: 12px;
+}
+
+.form-textarea::placeholder {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--placeholder-color);
+}
+
+.form-input:focus,
+.form-comment:focus {
+  border-color: var(--bluelite-color);
+}
+
+/* checkbox у модалці */
+
+.checkbox-input {
+  appearance: none;
+}
+
+.checkbox-input:checked + .checkbox-label {
+  color: violet;
+}
+
+.checkbox-label {
+  position: relative;
+}
+
+.checkbox-label::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 15px;
   
+}
+
+.checkbox-label::after {
+  position: absolute;
+  content: "";
+  background-image: url("../images/icon\ check.png");
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 15px;
+
 }
 
 /* стилі у тегів <section> */
@@ -192,7 +272,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 .current::after {
   display: inline-block;
-  content:"";
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -200,12 +280,12 @@ h1, h2, h3, h4, h5, h6, p, ul {
   height: 4px;
   border-radius: 2px;
   background-color: var(--bluelite-color);
- }
+}
 
 
 
 /* список що йде зразу за списком навігаціїї(email та tel) (хедер) */
-.link-contacts {  
+.link-contacts {
   display: flex;
   margin-left: auto;
   gap: 30px;
@@ -346,7 +426,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 /* кнопка при фокусі (герой) */
 .hero-btn:focus {
-background-color: var(--btnhover-color);
+  background-color: var(--btnhover-color);
 }
 
 /* список секціїї advantages (мейн) */
@@ -382,7 +462,7 @@ background-color: var(--btnhover-color);
 
 .what-we-do-thumb {
   position: relative;
-  
+
 }
 
 /* заголовок h3 секції "what-we-do"(мейн) */
@@ -446,14 +526,14 @@ background-color: var(--btnhover-color);
   line-height: 1.2;
   letter-spacing: 0.03em;
   margin-bottom: 10px;
- }
+}
 
- /* абзац h3 в елементі списку секції "our-team" (мейн) */
+/* абзац h3 в елементі списку секції "our-team" (мейн) */
 .position {
-    font-size: 16px;
-    line-height: 1.2;
-    letter-spacing: 0.03em;
-    color: var(--secondary-color);
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  color: var(--secondary-color);
 }
 
 .soc-list {
@@ -679,7 +759,8 @@ background-color: var(--btnhover-color);
   letter-spacing: 0.06em;
   font-weight: 700;
   padding: 0 28px;
-  transition: background-color var(--duration-1) var(--timing-function-1);;
+  transition: background-color var(--duration-1) var(--timing-function-1);
+  ;
 }
 
 .sub-icon-send {
@@ -721,7 +802,7 @@ background-color: var(--btnhover-color);
   border: none;
   border-radius: 4px;
   padding: 6px 22px;
-  transition: color var(--duration-1) var(--timing-function-1), background-color var(--duration-1) var(--timing-function-1),box-shadow var(--duration-1) var(--timing-function-1);
+  transition: color var(--duration-1) var(--timing-function-1), background-color var(--duration-1) var(--timing-function-1), box-shadow var(--duration-1) var(--timing-function-1);
 }
 
 /* ховер кнопки секції з класом "portfolio"(мейн) */
@@ -808,7 +889,7 @@ background-color: var(--btnhover-color);
 }
 
 /* заголовок h3 елементів списку секції з класом "portfolio"(мейн) */
-.our-works   {
+.our-works {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2;
@@ -823,8 +904,3 @@ background-color: var(--btnhover-color);
   letter-spacing: 0.03em;
   color: var(--secondary-color);
 }
-
-
-
-
-

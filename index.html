@@ -495,16 +495,21 @@
           </div>
           <label class="form-label" for="person-comment">Коментар</label>
           <textarea
-            class="form-comment"
+            class="form-textarea"
             name="person-comment"
             id="person-comment"
             placeholder="Введіть текст"
           ></textarea>
-          <label for="mailing-agreement"
+          <input
+            class="checkbox-input visually-hidden"
+            type="checkbox"
+            name="contract-terms"
+            id="contract-terms"
+          />
+          <label class="checkbox-label" for="contract-terms"
             >Погоджуюся з розсилкою та приймаю
-            <a class="agreement-link" href="#">Умови договору</a></label
+            <a class="contract-terms-link" href="#">Умови договору</a></label
           >
-          <select name="mailing-agreement" id="mailing-agreement"></select>
           <button class="subscribe-btn" type="submit">Відправити</button>
         </form>
         <button class="modal-btn" type="button" data-modal-close>
