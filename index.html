@@ -500,17 +500,20 @@
             id="person-comment"
             placeholder="Введіть текст"
           ></textarea>
-          <input
-            class="checkbox-input visually-hidden"
-            type="checkbox"
-            name="contract-terms"
-            id="contract-terms"
-          />
           <label class="checkbox-label" for="contract-terms"
-            >Погоджуюся з розсилкою та приймаю
+            ><input
+              class="checkbox-input visually-hidden"
+              type="checkbox"
+              name="contract-terms"
+              id="contract-terms"
+            />
+            <span class="checkbox-icon"></span>
+            Погоджуюся з розсилкою та приймаю
             <a class="contract-terms-link" href="#">Умови договору</a></label
           >
-          <button class="subscribe-btn" type="submit">Відправити</button>
+          <button class="subscribe-btn btn-modal" type="submit">
+            Відправити
+          </button>
         </form>
         <button class="modal-btn" type="button" data-modal-close>
           <svg class="cross" width="18px" height="18px">

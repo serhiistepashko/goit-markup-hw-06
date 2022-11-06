@@ -155,6 +155,11 @@ ul {
   transform: translateY(-50%);
 }
 
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--bluelite-color);
+}
+
 .form-control:focus-within .form-input-icon {
   fill: var(--bluelite-color);
 }
@@ -178,45 +183,52 @@ ul {
   color: var(--placeholder-color);
 }
 
-.form-input:focus,
-.form-comment:focus {
-  border-color: var(--bluelite-color);
-}
-
 /* checkbox у модалці */
 
-.checkbox-input {
-  appearance: none;
-}
-
-.checkbox-input:checked + .checkbox-label {
-  color: violet;
-}
-
 .checkbox-label {
-  position: relative;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--secondary-color);
+  margin-top: 20px;
+  cursor: pointer;
+ }
 
-.checkbox-label::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
+ .checkbox-input {
+  appearance: none;
+ }
+
+ .checkbox-icon {
+  display: inline-block;
   width: 16px;
   height: 15px;
-  
-}
+  border: 2px solid var(--black-color);
+  border-radius: 2px;
+  margin-right: 7px;
+ }
 
-.checkbox-label::after {
-  position: absolute;
-  content: "";
-  background-image: url("../images/icon\ check.png");
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 15px;
+ .checkbox-input:checked + .checkbox-icon {
+  background-color: var(--bluelite-color);
+  border-color: var(--bluelite-color);
+  background-image: url(../images/check.svg);
+  background-size: contain;
+  background-origin: border-box;
+ }
 
-}
+ .contract-terms-link {
+  color: var(--bluelite-color);
+  margin-left: 5px;
+ }
+
+ .btn-modal {
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+ }
+
 
 /* стилі у тегів <section> */
 .changes-section {
