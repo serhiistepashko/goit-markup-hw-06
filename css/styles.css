@@ -1,4 +1,4 @@
-/* спочатку йдуть властивості стилів для index.html, потім для portfolio.html починаючи зі строки 352 */
+/* спочатку йдуть властивості стилів для index.html, потім для portfolio.html */
 /* хедер та футер  для всіх файлів */
 
 :root {
@@ -71,7 +71,6 @@ ul {
 
 
 .modal {
-  /* box-sizing: content-box; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -143,7 +142,7 @@ ul {
   height: 40px;
   padding: 12px 12px 12px 42px;
   border-radius: 4px;
-  border: 1px solid var(--input-border-color);  
+  border: 1px solid var(--input-border-color);
   outline: none;
 }
 
@@ -194,40 +193,39 @@ ul {
   color: var(--secondary-color);
   margin-top: 20px;
   cursor: pointer;
- }
+}
 
- .checkbox-input {
+.checkbox-input {
   appearance: none;
- }
+}
 
- .checkbox-icon {
+.checkbox-icon {
   display: inline-block;
   width: 16px;
   height: 15px;
   border: 2px solid var(--black-color);
   border-radius: 2px;
   margin-right: 7px;
- }
+}
 
- .checkbox-input:checked + .checkbox-icon {
+.checkbox-input:checked+.checkbox-icon {
   background-color: var(--bluelite-color);
   border-color: var(--bluelite-color);
   background-image: url(../images/check.svg);
   background-size: contain;
   background-origin: border-box;
- }
+}
 
- .contract-terms-link {
+.contract-terms-link {
   color: var(--bluelite-color);
   margin-left: 5px;
- }
+}
 
- .btn-modal {
+.btn-modal {
   margin-top: 30px;
   margin-right: auto;
   margin-left: auto;
- }
-
+}
 
 /* стилі у тегів <section> */
 .changes-section {
@@ -260,28 +258,24 @@ ul {
 }
 
 /* клаc тегу header */
-.header-page {
+.page-header {
   border-bottom: 1px solid var(--border-bottom-color);
-  /* position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0; */
 }
 
 
 /* div обгортка логотипу та навігації хедера */
-.header-container {
+.page-header__wrapper {
   display: flex;
   align-items: center;
 }
 
 /* список навігації (хедер) */
-.link-nav {
+.nav {
   display: flex;
   gap: 50px;
 }
 
-.current::after {
+.nav__link--active::after {
   display: inline-block;
   content: "";
   position: absolute;
@@ -296,28 +290,28 @@ ul {
 
 
 /* список що йде зразу за списком навігаціїї(email та tel) (хедер) */
-.link-contacts {
+.contacts {
   display: flex;
   margin-left: auto;
   gap: 30px;
 }
 
-.link-contacts-icon {
-  margin-right: 10px;
-  fill: var(--secondary-color);
-}
-
-.link-contact {
+.contacts__link {
   display: flex;
   align-items: center;
 }
 
+.contacts__icon {
+  margin-right: 10px;
+  fill: var(--secondary-color);
+}
 
-.link:hover .link-contacts-icon {
+
+.link:hover .contacts__icon {
   fill: var(--bluelite-color);
 }
 
-.link:focus .link-contacts-icon {
+.link:focus .contacts__icon {
   fill: var(--bluelite-color);
 }
 
@@ -336,7 +330,7 @@ ul {
 }
 
 /* посилання-логотип (хедер) */
-.link-logo {
+.logo {
   font-family: var(--additional-font-family);
   font-size: 26px;
   font-weight: 700;
@@ -349,7 +343,7 @@ ul {
 }
 
 /* span обгортка у логотипі слова Web (хедер і футер) */
-.web-word {
+.logo__word {
   color: var(--bluelite-color);
 }
 
@@ -367,7 +361,7 @@ ul {
 }
 
 /* колір тексту  для пошти і телефону */
-.link-contacts .link {
+.contacts .link {
   color: var(--secondary-color);
 }
 
@@ -554,7 +548,7 @@ ul {
   margin-top: 20px;
 }
 
-.soc-list-link {
+.soc-list__link {
   width: 44px;
   height: 44px;
   display: flex;
@@ -564,24 +558,24 @@ ul {
   transition: background-color var(--duration-1) var(--timing-function-1);
 }
 
-.soc-icon {
+.soc-list__icon {
   fill: var(--icon-color);
   transition: fill var(--duration-1) var(--timing-function-1);
 }
 
-.soc-list-link:hover {
+.soc-list__link:hover {
   background-color: var(--bluelite-color);
 }
 
-.soc-list-link:focus {
+.soc-list__link:focus {
   background-color: var(--bluelite-color);
 }
 
-.soc-list-link:hover .soc-icon {
+.soc-list__link:hover .soc-list__icon {
   fill: var(--white-color);
 }
 
-.soc-list-link:focus .soc-icon {
+.soc-list__link:focus .soc-list__icon {
   fill: var(--white-color);
 }
 
@@ -633,7 +627,7 @@ ul {
   background-color: var(--banner-color);
 }
 
-.change-style-footer {
+.page-footer__flex {
   display: flex;
   align-items: baseline;
 }
@@ -643,47 +637,42 @@ ul {
 }
 
 /* посилання логотип у футері */
-.link-logo-footer {
-  font-family: var(--additional-font-family);
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.03em;
+.page-footer__logo {
   color: var(--white-color);
-  text-decoration: none;
   display: inline-block;
   padding-top: 60px;
 }
 
+
 /* тег <address> у футері*/
-.contacts {
+.contact {
   font-style: normal;
 }
 
 /* ще одна назва класу для списку тегу address у футері */
-.contacts-footer {
+.contact__list {
   display: inline-block;
   padding-top: 20px;
   padding-bottom: 60px;
 }
 
 /* перший елемент списку у тезі address: адреса з посиланням на гугл карту (футер) */
-.location {
+.contact__location {
   margin-bottom: 9px;
 }
 
 /* посилання першого елементу списку у тезі address (футер) */
-.location .link-footer {
+.contact__location .contact__link {
   color: var(--white-color);
 }
 
 /* інші елементи списку у тезі address email та tel (футер) */
-.link-contacts-item:not(:last-child) {
+.contact__item:not(:last-child) {
   margin-bottom: 9px;
 }
 
 /* посилання елементів списку у тезі address (футер) */
-.link-footer {
+.contact__link {
   font-size: 14px;
   line-height: 1.2;
   letter-spacing: 0.03em;
@@ -693,33 +682,33 @@ ul {
 }
 
 /*ховер посилання елементів списку у тезі address (футер) */
-.link-footer:hover {
+.contact__link:hover {
   color: var(--bluelite-color);
 }
 
 /*фокус посилання елементів списку у тезі address (футер) */
-.link-footer:focus {
+.contact__link:focus {
   color: var(--bluelite-color);
 }
 
-.join {
+.social-networks__title {
   color: var(--white-color);
 }
 
-.sc-lnk-footer {
+.soc-list__link--bg-color {
   background-color: var(--bckgrnd-soc-color);
 }
 
-.soc-icon-footer {
+.soc-list__icon--color {
   fill: var(--white-color);
 }
 
 /* поле введення пошти для підписки */
-.subscribe-email {
+.subscribe {
   margin-left: 93px;
 }
 
-.subscribe-form-label {
+.subscribe-form__label {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.1;
@@ -730,17 +719,17 @@ ul {
   margin-bottom: 20px;
   transition: color var(--duration-1) var(--timing-function-1);
 }
-
+/* 
 .sub-email-heading:hover {
   color: var(--border-input-email-color);
-}
+} */
 
 .subscribe-field-btn {
   display: flex;
   margin-top: 20px;
 }
 
-.subscribe-field {
+.subscribe__field {
   width: 358px;
   height: 50px;
   background-color: var(--banner-color);
@@ -752,7 +741,7 @@ ul {
   color: var(--white-color);
 }
 
-.subscribe-btn {
+.subscribe__btn {
   width: 200px;
   height: 50px;
   display: flex;
@@ -774,12 +763,12 @@ ul {
   ;
 }
 
-.sub-icon-send {
+.subscribe__icon {
   fill: var(--white-color);
 }
 
-.subscribe-btn:hover,
-.subscribe-btn:focus {
+.subscribe__btn:hover,
+.subscribe__btn:focus {
   background-color: var(--btnhover-color);
 }
 
