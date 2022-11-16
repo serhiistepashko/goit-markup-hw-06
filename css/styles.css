@@ -109,7 +109,7 @@ ul {
   transition: fill var(--duration-1) var(--timing-function-1);
 }
 
-.btn-close:hover .btn-close__icon {
+.btn-close__icon--hovered:hover {
   fill: var(--bluelite-color);
 }
 
@@ -241,6 +241,20 @@ ul {
   padding: 0 15px;
 }
 
+/* прихований клас*/
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
 /* клаc тегу header */
 .page-header {
   border-bottom: 1px solid var(--border-bottom-color);
@@ -357,27 +371,10 @@ ul {
   fill: var(--bluelite-color);
 }
 
-/* приховані заголовоки */
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
-}
-
 /* колір тексту  для пошти і телефону */
 .contacts__link {
   color: var(--secondary-color);
 }
-
-
-
 
 /* Властивості для сорінки index.html */
 
@@ -396,7 +393,6 @@ ul {
   background-position: center;
   background-size: cover;
 }
-
 
 /* заголовок h1 секці герой (мейн) */
 .hero__heading {
